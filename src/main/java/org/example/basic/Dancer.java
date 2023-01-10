@@ -2,7 +2,7 @@ package org.example.basic;
 
 import static org.example.basic.DanceLevel.*;
 
-public class Dancer {
+public class Dancer extends Object {
 
     private final String crewName; // 팀의 이름
     private final String myName; // 내 이름
@@ -16,10 +16,17 @@ public class Dancer {
     // 유연성 운동 했는지
     private boolean flexible;
 
+    public Dancer() {
+        this("기본크루", "이름없음");
+//        this.crewName = "기본크루";
+//        this.myName = "이름없음";
+    }
+
     // 생성자 : 객체가 처음 생성될 때 호출되는 메서드
     public Dancer(String crewName, String myName) {
         this.crewName = crewName;
         this.myName = myName;
+        System.out.println("그냥 dancer 생성됨!");
     }
 
     // 스트레칭

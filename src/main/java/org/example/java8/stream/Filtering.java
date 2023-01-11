@@ -1,11 +1,11 @@
 package org.example.java8.stream;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static java.lang.System.*;
-import static java.util.stream.Collectors.*;
-import static org.example.java8.stream.Dish.*;
+import static java.lang.System.out;
+import static java.util.stream.Collectors.toList;
+import static org.example.java8.stream.Dish.Type;
+import static org.example.java8.stream.Dish.menu;
 
 public class Filtering {
 
@@ -27,7 +27,7 @@ public class Filtering {
         // 요리 목록 중에 육류이면서 600칼로리 미만인 요리만 필터링해서 출력
         menu.stream()
                 .filter(dish -> dish.getType() == Type.MEAT && dish.getCalories() < 600)
-                .toList()
+                .collect(toList())
                 .forEach(out::println);
 
 
@@ -39,7 +39,7 @@ public class Filtering {
         nums.stream()
                 .filter(n -> n % 2 == 0)
                 .distinct()  // 중복 제거
-                .toList()
+                .collect(toList())
                 .forEach(out::println);
 
 
@@ -49,7 +49,7 @@ public class Filtering {
         menu.stream()
                 .filter(d -> d.getCalories() > 300)
                 .limit(3) // 앞에서부터 3개만 추출
-                .toList()
+                .collect(toList())
                 .forEach(out::println);
 
         out.println("=========================================");
@@ -58,7 +58,7 @@ public class Filtering {
         menu.stream()
                 .filter(d -> d.getCalories() > 300)
                 .skip(2)
-                .toList()
+                .collect(toList())
                 .forEach(out::println);
 
         out.println("=========================================");

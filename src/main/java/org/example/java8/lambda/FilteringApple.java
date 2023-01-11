@@ -77,6 +77,27 @@ public class FilteringApple {
         }
         return result;
     }
+
+    /**
+     * 리스트와 변경조건을 전달하면 리스트 내부의 값을 변경조건에 따라
+     * 변환한 뒤 반환하는 map이라는 메서드를 구현해보세요.
+     *
+     * ex )  map(appleList, apple -> apple.setColor(RED))
+     *
+     *    =>  리스트 안의 모든 사과가 빨강색으로 변해야 한다
+     *
+     *       map(appleList, apple -> apple.getColor())
+     *    =>  리스트 안의 모든 사과의 색깔만 뽑아서 색깔만 담긴 리스트 반환
+     */
+
+    public static <T, R> List<R> map(List<T> list, GenericFunction<T, R> mapper) {
+        List<R> result = new ArrayList<>();
+        for (T t : list) {
+            R r = mapper.apply(t);
+            result.add(r);
+        }
+        return result;
+    }
 }
 
 

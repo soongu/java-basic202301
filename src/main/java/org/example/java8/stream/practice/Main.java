@@ -1,13 +1,11 @@
 package org.example.java8.stream.practice;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-import static java.lang.System.*;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
+import static java.lang.System.out;
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
 
 public class Main {
 
